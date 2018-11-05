@@ -4,7 +4,8 @@ var _remotehqjobs = {
     {
       company: "Productboard",
       image: "https://www.productboard.com/wp-content/themes/productboard/public/images/logo-pb.svg",
-      title: "Join Productboard: Product Management for makers of excellent products (SF/Prague)"
+      title: "Join Productboard: Product Management for makers of excellent products (SF/Prague)",
+      jobsPage: "http://bit.ly/2ySITbz"
     },
     {
       "company": "Interstellar",

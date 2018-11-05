@@ -68,7 +68,7 @@ var _remotehqjobs = {
     var head = document.head || document.getElementsByTagName('head')[0];
     var style = document.createElement('style');
     style.type = 'text/css';
-    style.tile = 'remotehq';
+    style.title = 'remotehq';
 
     if (style.styleSheet){
       // This is required for IE8 and below.

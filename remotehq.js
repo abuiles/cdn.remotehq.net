@@ -88,7 +88,7 @@ var _remotehqjobs = {
     el.innerHTML = '<div class="remotehqad"><a href="' + ad.jobsPage + '"><div class="image">' + img +  '</div></a><a href="' + ad.jobsPage + '" class="text">' + ad.title + '</a><a href="http://remotehq.net/?utm_source=' + ad.company + '&utm_medium=ad_via_link&utm_campaign=in_unit" class="remotehq-poweredby" target="_blank" rel="noopener">job via RemoteHQ</a></div>';
     var fdiv = document.createElement('div');
     fdiv.appendChild(el);
-    var remotehqjs = document.getElementById('_remotehqads_js');
+    var remotehqjs = document.getElementById('_remotehq_js');
     remotehqjs.parentNode.insertBefore(fdiv, remotehqjs.nextSibling);
   }
 }

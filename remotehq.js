@@ -33,28 +33,28 @@ var _remotehqjobs = {
   ],
   serveRandom(ads) {
     var ad = ads[Math.floor(Math.random()*ads.length)];
-    this.serve(ad)
+    this.serve(ad);
   },
   init() {
-    var style = document.querySelector("[title='remotehq']")
+    var style = document.querySelector("[title='remotehq']");
 
     if (!style) {
       this.insertStyle();
     }
 
     try {
-      var target = document.querySelector("[data-remotehqcompany")
+      var target = document.querySelector("[data-remotehqcompany");
       if (target) {
-        var companies = target.getAttribute('data-remotehqcompany').split(',')
+        var companies = target.getAttribute('data-remotehqcompany').split(',');
 
         var ads = this.jobs.filter(function(ad) {
           return companies.indexOf(ad.company) >= 0;
         });
 
         if (ads.length > 0) {
-          this.serveRandom(ads)
+          this.serveRandom(ads);
         } else {
-          this.serveRandom(this.jobs)
+          this.serveRandom(this.jobs);
         }
       } else {
         this.serveRandom(this.jobs);
@@ -83,11 +83,11 @@ var _remotehqjobs = {
 
     var img;
     if (ad.imageSvg) {
-      img = ad.imageSvg
+      img = ad.imageSvg;
     } else if (ad.image)  {
-      img = '<img src="' + ad.image + '" alt="" border="0" height="100" width="130" />'
+      img = '<img src="' + ad.image + '" alt="" border="0" height="100" width="130" />';
     } else {
-      img = '<h2>' + ad.company + '</h2>'
+      img = '<h2>' + ad.company + '</h2>';
     }
 
     el.innerHTML = '<div class="remotehqjob"><a href="' + ad.jobsPage + '"><div class="image">' + img +  '</div></a><a href="' + ad.jobsPage + '" class="text">' + ad.title + '</a><a href="http://remotehq.net/?utm_source=' + ad.company + '&utm_medium=ad_via_link&utm_campaign=in_unit" class="remotehq-poweredby" target="_blank" rel="noopener">job via RemoteHQ</a></div>';

@@ -25,8 +25,8 @@ var _remotehqjobs = {
       jobsPage: "http://bit.ly/2Oo3hqd"
     },
   ],
-  serveRandom() {
-    var ad = this.jobs[Math.floor(Math.random()*this.jobs.length)];
+  serveRandom(ads) {
+    var ad = ads[Math.floor(Math.random()*ads.length)];
     this.serve(ad)
   },
   init() {
@@ -39,22 +39,22 @@ var _remotehqjobs = {
     try {
       var target = document.querySelector("[data-remotehqcompany")
       if (target) {
-        var company = target.getAttribute('data-remotehqcompany')
+        var companies = target.getAttribute('data-remotehqcompany').split(',')
 
-        var ad = this.jobs.find(function(ad) {
-          return ad.company == company;
+        var ads = this.jobs.filter(function(ad) {
+          return companies.indexOf(ad.company) >= 0;
         });
 
-        if (ad) {
-          this.serve(ad)
+        if (ads.length > 0) {
+          this.serveRandom(ads)
         } else {
-          this.serveRandom()
+          this.serveRandom(this.jobs)
         }
       } else {
-        this.serveRandom();
+        this.serveRandom(this.jobs);
       }
     } catch(e) {
-      this.serveRandom();
+      this.serveRandom(this.jobs);
     }
   },
   insertStyle() {
